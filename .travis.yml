@@ -1,0 +1,18 @@
+
+language: node_js
+
+env:
+  global:
+    secure: AUwjooJXHMt/URReFH+whMUj9CJKtGx4WkhDCox+NWe8QJmDM/fLQGjgr005vnb7drpbqE0HxAlsb8M4tsmc5Fq+CMSOG8UjD0o2m93yFCJglpOg0V6k3OUFUvtIJuaDrZ9xdwsb87YbVKTABL62hx+sG9iG5Nsd/hlfwnDjsoY=
+
+after_success:
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - git remote add heroku git@heroku.com:tweetcount.git
+  - echo "Host heroku.com" >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "   CheckHostIP no" >> ~/.ssh/config
+  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+  - yes | heroku keys:add
+  - yes | git push heroku master
+node_js: 
+- 0.8
