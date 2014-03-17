@@ -24,7 +24,7 @@ I decided to host a simple API myself that could talk server-to-server with the 
 `full`		If `true` response will contain the raw twitter search API response.  **Optional**
 
 ##Notes
-This is not a search API, there is no paging or parsing functionality.  This is purely to feed a dashboard that twitter activity is increasing/decreasing/etc.
+This is not a search API, there is no paging or parsing functionality.  This is purely to feed a dashboard that twitter activity is increasing/decreasing/etc.  Also, since the Twitter search API will only ever return batches of 100, that is the biggest number you're ever going to get out of this API.  If the meter says 100 you should probably look at your feed, something might be happening! 
 
 
 ##Credits
