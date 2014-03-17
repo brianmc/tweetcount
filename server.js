@@ -63,6 +63,8 @@ app.get('/tweets', function(req, res) {
           console.log('Nothing returned from Twitter :'+err);
       }
 
+      res.header("Access-Control-Allow-Origin", "*");
+
       if(req.query.full=='true')
       {
         res.send(reply);
